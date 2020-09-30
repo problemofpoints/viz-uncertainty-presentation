@@ -258,9 +258,9 @@ background-size: 4%
 ---
 class: left, top
 
-# Model fitting example
+# Loss reserving example - model fit
 
-Use lore study loss ratio volatility example?
+.center[![:scale 70%](exhibits/cl-animation.gif)]
 
 ---
 
@@ -320,8 +320,9 @@ class: inverse, left, top
 ---
 layout: true
 background-image: url(img/lockton-title-background.png)
+background-size: cover
 ---
-class: inverse, right, middle
+class: right, middle, inverse
 
 ### atroyer@lockton.com
 ### Slides: [`r fa(name = "link", fill = "white")` maf-uncertainty-viz.netlify.app/](https://maf-uncertainty-viz.netlify.app/)

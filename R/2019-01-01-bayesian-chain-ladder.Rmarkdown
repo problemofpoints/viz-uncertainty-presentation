@@ -287,6 +287,43 @@ pp_check(est_cl_bayesian_nb, "ecdf_overlay") +
   pp_check(est_cl_bayesian_nb, "boxplot") +
   plot_layout(ncol = 2)
 ```
+```{r bayesian-ppc2}
+library(tidybayes)
+library(gganimate)
+library(gifski)
+
+set.seed(123456)
+ndraws = 50
+
+long_paid_tri_5 <- long_paid_tri %>%
+  filter(acc_yr <= 1993) 
+
+p <- long_paid_tri_5 %>%
+  add_fitted_draws(est_cl_bayesian_nb, n = ndraws) %>%
+  group_by(acc_yr, .draw) %>%
+  mutate(.value = cumsum(.value)) %>%
+  ggplot(aes(x = dev_lag)) +
+  geom_line(aes(y = .value, group = paste(acc_yr, .draw)), size = 0.05) +
+  geom_point(aes(x = dev_lag, y = value), 
+             colour = lockton_new_colors$red, size = 1,
+             data = long_paid_tri_5 %>% 
+               group_by(acc_yr) %>% 
+               mutate(value = cumsum(value))) +
+  facet_wrap(~ acc_yr) +
+  scale_y_continuous(labels = scales::number_format()) + 
+  scale_x_continuous(breaks = 1:10) +
+  labs(y = NULL, x = "Development lag") +
+  transition_states(.draw, 0, 1) +
+  shadow_mark(paste = TRUE, future = TRUE, color = "gray50", alpha = 1/20)
+
+anim_plot <- animate(p, nframes = ndraws, fps = 3, 
+                       width = 450, height = 300, res = 110)
+
+gifski(fs::dir_ls("R/", glob = "*.png"),"exhibits/cl-animation.gif", delay = 0.5)
+
+anim_plot_save <- anim_save("exhibits/cl-animation.gif", anim_plot)
+
+```
 
 Below is a histogram of the total estimated reserves.
 
