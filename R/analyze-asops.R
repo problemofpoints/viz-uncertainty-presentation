@@ -8,11 +8,11 @@ library(ggplot2)
 library(tidyr)
 library(topicmodels)
 library(flextable)
-library(AonECM)
+library(locktonr)
 library(officer)
 
 
-AonECM::ggSetTheme()
+locktonr::gg_set_lockton_theme()
 
 # ---------- import asops -------------------
 asops <- readRDS("ASOPS/asops_pc.rds") %>%
@@ -163,7 +163,7 @@ ft_asops <- asops %>%
   distinct(number, title) %>%
   mutate(number = number_format(number)) %>%
   regulartable() %>%
-  ft_theme_aon()
+  ft_lockton_theme()
 
 gg_words <- asops_word_count %>%
   slice(1:10) %>%
@@ -198,7 +198,7 @@ ft_uncertainty <- asops_words_ex_actuary %>%
   distinct(number, title, word) %>%
   mutate(number = number_format(number)) %>%
   regulartable() %>%
-  ft_theme_aon()
+  ft_lockton_theme()
 
 
 

@@ -1,0 +1,24 @@
+/* links */
+
+  a,
+a:visited {
+  color: #EF5399;
+/*  border-bottom: 0px solid #EF5399; */
+/*  box-shadow: inset 0 -1px 0 #EF5399; */
+}
+
+a:hover,
+a:focus {
+  color: #EF5399;
+  background: rgba(0, 174, 239, .1);
+  border-bottom: none;
+}
+
+a > code {
+  color: var(--color-heat);
+  text-decoration: none;
+}
+
+.inverse a {
+  color: #FFF;
+}
