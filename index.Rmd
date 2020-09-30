@@ -226,12 +226,13 @@ class: left, top
 # Forecasting the Presidential Election
 
 [`r fa(name = "link")` Information, incentives, and goals in election forecasts](http://www.stat.columbia.edu/~gelman/research/published/jdm200907b.pdf)  
+--
 .pull-left[
 ### ![:scale 20%](exhibits/economist-logo.png)
 [`r fa(name = "link")` https://projects.economist.com/us-2020-forecast/president](https://projects.economist.com/us-2020-forecast/president)  
 ![:scale 95%](exhibits/economist-viz.png)
 ]
-
+--
 .pull-right[
 ### ![:scale 85%](exhibits/538-logo.svg)
 [`r fa(name = "link")` https://projects.fivethirtyeight.com/2020-election-forecast/](https://projects.fivethirtyeight.com/2020-election-forecast/)  
@@ -323,4 +324,12 @@ background-image: url(img/lockton-title-background.png)
 class: inverse, right, middle
 
 ### atroyer@lockton.com
-### Slides: [url of website with slides](url)
+### Slides: [`r fa(name = "link", fill = "white")` maf-uncertainty-viz.netlify.app/](https://maf-uncertainty-viz.netlify.app/)
+### Code: [`r fa(name = "github", fill = "white")` ](https://github.com/problemofpoints/viz-uncertainty-presentation)
+
+
+
+
+
+
+

@@ -20,5 +20,6 @@ a > code {
 }
 
 .inverse a {
-  color: #FFF;
+  color: #EF5399;
+  border-bottom: none;
 }
